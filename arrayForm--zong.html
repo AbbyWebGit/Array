@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang = "en">
+	<meta charset = "UTF-8">
+	<title>数组循环</title>
+	<script>
+
+		var data = {
+			'a':[2,1,5,6,8,9,0,9,10],
+			'b':[25,6,8,9,0,5,6,8,9,0,9],
+            'c':[29,0,9,5,6,8,9,0,9]
+			}
+
+    function show()
+    {
+    	var arrayA="";
+    	var arrayB=new Array();
+    	var len=0;
+    	var htmlstr = "";
+		htmlstr += "<table id='table' cellpadding='0' cellspacing='0'>";
+		var hh="";
+		var sedTdHh="";
+    	for(var name in data){
+    		//将每次循环完的数组放入到arrayB中 形成二维数组
+    		arrayA=data[name];
+    		arrayB.push(arrayA);
+    		console.log(arrayA);
+    		//形成第一行字符串   		
+    		var first='<tr>'
+			hh+= "<td>"+name+"</td>";
+			var firTd=htmlstr+first+hh+'</td>';
+
+			//判断传入数值中谁最长
+    		if (data[name].length>len) {
+    			len=data[name].length;
+    		}
+    		// console.log(len);
+    		// console.log(arrayB);
+    	}
+      
+        //二维数组循环取出来
+    	for (var i = 0; i < len; i++) {
+    		var first="<tr>";
+    	    var ee="";
+       //注意取出时候i在后面
+    	 for(var j=0;j<arrayB.length;j++){
+    	 	if (arrayB[j][i]==undefined) {
+    	 		ee+="<td></td>"
+    	 	}else{
+    	 	 ee+='<td>'+arrayB[j][i]+'</td>'
+    	 	}
+    	 	//console.log(ee);
+    	      }
+
+    	   sedTdHh+=first+ee+'</tr>'
+    	   var sedTd=sedTdHh+'<table>';
+    	   //console(sedTd);
+
+ 	};
+ 	  var fin=firTd+sedTd;
+    	return fin;
+      }
+
+
+		function index()
+		{
+			document.getElementById("demo").innerHTML=show();
+		}	
+	</script>
+
+	<style type="text/css">
+		#table td
+		{background-color: #fff;border: 1px #000 solid;text-align: center;width: 30px;height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<p>根据传入数组格式来渲染纵向表格表格</p>
+    <P>
+    var data = {
+            'a':[2,1,5,6,8,9,0,9,10],
+            'b':[25,6,8,9,0,5,6,8,9,0,9],
+            'c':[29,0,9,5,6,8,9,0,9]
+            }
+            </P>
+	<p id="demo"></p >
+		<button type="button" onclick="index()">弹出表格</button>
+
+	</body>
+	</html> 
+

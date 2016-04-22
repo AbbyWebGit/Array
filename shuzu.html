@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数组循环</title>
+</head>
+
+<body>
+   
+   <script type="text/javascript">
+    // function data() {
+    //     var data = [{
+    //         "title": "aaa",
+    //         "c": "A"
+    //     }, {
+    //         "title": "bbb",
+    //         "c": "B"
+    //     }, {
+    //         "title": "ccc",
+    //         "c": "C"
+    //     }, {
+    //         "title": "ddd",
+    //         "c": "A"
+    //     }]
+    //     var tdata = new Object();
+    //     //console.log(data[1].title);
+    //     for (i = 0;  i < data.length; i++) {
+    //     	var number=[];
+    //         if(data[i].c == 'A') {
+    //         	number.push(data[i].title);
+    //             tdata.A = number;
+    //         }
+    //         if (data[i].c == 'B') {
+    //         	tdata.B = data[i].title;
+    //         };
+    //         if (data[i].c == 'C') {
+    //         	tdata.C = data[i].title;
+    //         };
+    //         console.log(tdata);
+    //     }
+    // }
+    // data();
+    </script>
+    
+
+
+
+
+     <div class="bgImg clear">
+        <p> 将上面的数组转化为下面的数组,结果请参考控制台</p>
+        <img src="shuzu.jpg" />
+    </div>
+    <script type="text/javascript">
+    	function data () {
+    		var data={
+    			'a':[1,2,3,4,5,6,7,8],
+    			'b':[1,2,3,4,5,6,7,8],
+    			'c':[1,2,3,4,5,6,7,8]
+    		}
+    		var tdata=[];		
+    		for(i=0;i<8;i++){
+    			var number=new Object;
+    			number=new Object();
+    			number.a=data.a[i];
+    			number.b=data.b[i];
+    			number.c=data.c[i];
+    			tdata.push(number);
+    		}	
+    		console.log(tdata);				
+    	}
+    	data();
+
+    </script>
+</body>
+
+</html>

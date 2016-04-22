@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang = "en">
+	<meta charset = "UTF-8">
+	<title>数组循环</title>
+	<script>
+		var data = {
+			'a':[2,1,5,6,8,9,0,9,10],
+			'b':[2,1,5,6,82,1,5,,9],
+			'c':[26,8,9,6,8,9,0,9]
+		};
+
+		function show()
+		{
+			var htmlstr = "";
+			htmlstr += "<table id='table' cellpadding='0' cellspacing='0'>";
+			for(var name in data)
+			{
+				htmlstr += "<tr>";
+				htmlstr += "<td>"+name+"</td>";
+				var arr = data[name];
+				//console.log(arr);
+				for(var item in arr)
+				{
+					htmlstr += "<td>"+arr[item]+"</td>";
+				}
+				htmlstr += "</tr>";
+			}
+			htmlstr += "</table>";
+			return htmlstr;	
+		}	
+		function index()
+		{
+			document.getElementById("demo").innerHTML=show();
+		}	
+	</script>
+
+	<style type="text/css">
+		#table td
+		{background-color: #fff;border: 1px #000 solid;text-align: center;width: 30px;height: 30px;
+		}
+	</style>
+</head>
+<body>
+     <p>根据传入数组格式来渲染横向表格</p>
+     <p>var data = {
+			'a':[2,1,5,6,8,9,0,9,10],
+			'b':[2,1,5,6,82,1,5,,9],
+			'c':[26,8,9,6,8,9,0,9]
+		};
+</p>
+	 <p id="demo"></p >
+		<button type="button" onclick="index()">弹出表格</button>
+
+	</body>
+	</html> 
